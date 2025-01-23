@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Course Detail Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Course Overview Section -->
+    <header class="course-header">
+        <h1 class="course-title">Mastering Web Development: Beginner to Advanced</h1>
+        <div class="course-info">
+            <p>Level: <span>Beginner</span></p>
+            <p>Duration: <span>20 hours</span></p>
+            <p>Videos: <span>25</span></p>
+            <p>Rating: <span>4.5/5</span></p>
+        </div>
+        <button class="enroll-button">Enroll</button>
+    </header>
+
+    <main>
+        <!-- Video List Section -->
+        <section class="video-list-section">
+            <h2>Video List</h2>
+            <div class="video-list">
+                <div class="video-item">
+                    <span class="video-title">Introduction to HTML</span>
+                    <span>Duration: 10:05</span>
+                    <span>Views: 50,000</span>
+                    <label>
+                        <input type="checkbox" class="mark-completed"> Mark as Completed
+                    </label>
+                </div>
+                <div class="video-item">
+                    <span class="video-title">CSS Basics</span>
+                    <span>Duration: 15:30</span>
+                    <span>Views: 40,000</span>
+                    <label>
+                        <input type="checkbox" class="mark-completed"> Mark as Completed
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Player Section -->
+        <section class="video-player-section">
+            <h2>Video Player</h2>
+            <iframe
+                id="video-frame"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/IhyzIwZ7xxk?rel=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+            <div class="video-summary">
+                <h3>AI-Generated Summary</h3>
+                <p>This video covers the basics of HTML...</p>
+            </div>
+        </section>
+
+        <!-- Notes and Tools Section -->
+        <section class="notes-tools-section">
+            <h2>Notes & Tools</h2>
+            <textarea placeholder="Add your notes here..."></textarea>
+            <button class="save-notes-button">Save Notes</button>
+            <div class="ai-questions">
+                <h3>AI-Generated Questions</h3>
+                <ul>
+                    <li>What is the purpose of an HTML tag?</li>
+                    <li>Explain the difference between inline and block elements.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Progress Tracker -->
+        <section class="progress-section">
+            <h2>Progress Tracker</h2>
+            <div class="progress-bar">
+                <div class="progress" style="width: 0%;">0% Complete</div>
+            </div>
+        </section>
+
+        <!-- Job-Seeker Tips -->
+        <section class="job-seeker-tips">
+            <h2>Job-Seeker Tips</h2>
+            <p>Learn how to create a professional portfolio, ace interviews, and land your dream job.</p>
+        </section>
+
+        <!-- Rate the Course -->
+        <section class="rate-course-section">
+            <h2>Rate the Course</h2>
+            <select id="course-rating">
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Very Good</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+            </select>
+            <button class="submit-rating-button">Submit Rating</button>
+        </section>
+
+        <!-- Gamification and Community -->
+        <section class="community-engagement">
+            <h2>Community Discussion</h2>
+            <textarea placeholder="Join the discussion..."></textarea>
+            <button class="post-comment-button">Post Comment</button>
+        </section>
+
+        <section class="completion-certificate">
+            <button class="download-certificate-button">Download Certificate</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Skill Courses. All rights reserved.</p>
+    </footer>
+</body>
+</html>

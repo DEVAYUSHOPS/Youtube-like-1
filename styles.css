@@ -1,0 +1,238 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Header Section */
+header.course-header {
+    background-color: #17a2b8;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header.course-header .course-title {
+    font-size: 2em;
+    margin: 0;
+    font-weight: bold;
+}
+
+header.course-header .course-info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+header.course-header .course-info p {
+    margin: 0;
+}
+
+header.course-header .enroll-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2cd253;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header.course-header .enroll-button:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Section Containers */
+.video-list-section, .video-player-section, .notes-tools-section, .progress-section, .job-seeker-tips, .rate-course-section, .community-engagement, .completion-certificate {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Video List Section */
+.video-list-section .video-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.video-list-section .video-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.video-list-section .video-item:last-child {
+    border-bottom: none;
+}
+
+.video-list-section .video-item:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.video-list-section .video-title {
+    font-weight: bold;
+}
+
+/* Video Player Section */
+.video-player-section iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+.video-summary {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Notes and Tools Section */
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: none;
+}
+
+.notes-tools-section .save-notes-button {
+    margin-top: 10px;
+    background-color: #17a2b8;
+    transition: background-color 0.3s ease;
+}
+
+.notes-tools-section .save-notes-button:hover {
+    background-color: #138496;
+}
+
+/* Progress Tracker */
+.progress-bar {
+    width: 100%;
+    background: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar .progress {
+    background: #28a745;
+    height: 100%;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    white-space: nowrap;
+    transition: width 0.5s ease;
+}
+
+/* Job-Seeker Tips */
+.job-seeker-tips p {
+    font-size: 1em;
+    color: #444;
+}
+
+/* Rating Section */
+.rate-course-section select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.rate-course-section button {
+    margin-top: 10px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Footer */
+footer.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #17a2b8;
+    color: white;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header.course-header .course-info {
+        flex-direction: column;
+    }
+
+    .video-player-section iframe {
+        height: 250px;
+    }
+
+    .video-list-section .video-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .progress-bar .progress {
+        font-size: 0.8em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
