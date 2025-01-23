@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Introduction to HTML",
             duration: "10:05",
             views: "50,000",
-            src: "https://www.youtube.com/embed/IhyzIwZ7xxk?rel=0"
+            src: "https://www.youtube.com/embed/G3e-cpL7ofc"
         },
         {
             title: "CSS Basics",
             duration: "15:30",
             views: "40,000",
-            src: "https://www.youtube.com/embed/IhfDFPgh_Nk?rel=0"
+            src: "https://www.youtube.com/embed/wRNinF7YQqQ"
         }
     ];
 
