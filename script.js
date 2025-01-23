@@ -1,23 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Display course details
-    const courseDetails = {
-        title: "Mastering Web Development: Beginner to Advanced",
-        level: "Beginner",
-        duration: "20 hours",
-        videos: 25,
-        rating: "4.5/5",
-    };
-
-    const displayCourseDetails = () => {
-        document.querySelector('.course-title').textContent = courseDetails.title;
-        const courseInfoItems = document.querySelectorAll('.course-info p span');
-        courseInfoItems[0].textContent = courseDetails.level;
-        courseInfoItems[1].textContent = courseDetails.duration;
-        courseInfoItems[2].textContent = courseDetails.videos;
-        courseInfoItems[3].textContent = courseDetails.rating;
-    };
-
-    displayCourseDetails();
+    
 
     // Handle "Mark as Completed" checkboxes
     document.querySelectorAll('.mark-completed').forEach(checkbox => {
