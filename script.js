@@ -56,22 +56,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadNotes();
 
+    // Video data
+    const videoData = [
+        {
+            title: "Introduction to HTML",
+            duration: "10:05",
+            views: "50,000",
+            src: "https://www.youtube.com/embed/IhyzIwZ7xxk?rel=0"
+        },
+        {
+            title: "CSS Basics",
+            duration: "15:30",
+            views: "40,000",
+            src: "https://www.youtube.com/embed/IhfDFPgh_Nk?rel=0"
+        }
+    ];
+
+    const videoFrame = document.querySelector('#video-frame');
+    const summaryContainer = document.querySelector('.video-summary p');
+    const videoListContainer = document.querySelector('.video-list');
+
+    // Populate the video list dynamically
+    videoListContainer.innerHTML = '';
+    videoData.forEach((video, index) => {
+        const videoItem = document.createElement('div');
+        videoItem.className = 'video-item';
+        videoItem.dataset.index = index;
+        videoItem.innerHTML = `
+            <span class="video-title">${video.title}</span>
+            <span>Duration: ${video.duration}</span>
+            <span>Views: ${video.views}</span>
+            <label>
+                <input type="checkbox" class="mark-completed"> Mark as Completed
+            </label>
+        `;
+        videoListContainer.appendChild(videoItem);
+    });
+
+    // Handle video selection
+    videoListContainer.addEventListener('click', (event) => {
+        const videoItem = event.target.closest('.video-item');
+        if (videoItem) {
+            const index = videoItem.dataset.index;
+            const selectedVideo = videoData[index];
+
+            // Update the video source and summary
+            videoFrame.src = selectedVideo.src;
+            summaryContainer.textContent = aiSummaries[selectedVideo.title] || "Summary not available.";
+
+            // Highlight the active video
+            document.querySelectorAll('.video-item').forEach(item => item.classList.remove('active-video'));
+            videoItem.classList.add('active-video');
+        }
+    });
+
     // AI-Generated Summaries
     const aiSummaries = {
         "Introduction to HTML": "This video covers the basics of HTML, including tags, structure, and semantic elements.",
         "CSS Basics": "Learn the fundamentals of CSS, including selectors, properties, and responsive design techniques."
     };
-
-    const videoItems = document.querySelectorAll('.video-item');
-
-    videoItems.forEach(video => {
-        video.addEventListener('click', () => {
-            const title = video.querySelector('.video-title').textContent;
-            const summary = aiSummaries[title] || "Summary not available.";
-            const summaryContainer = document.querySelector('.video-summary p');
-            summaryContainer.textContent = summary;
-        });
-    });
 
     // Update Progress Tracker
     function updateProgress() {
@@ -92,10 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProgress();
 
     // Video Player Error Handling
-    const videoFrame = document.querySelector('#video-frame');
     videoFrame.addEventListener('error', () => {
         videoFrame.src = '';
-        const summaryContainer = document.querySelector('.video-summary p');
         summaryContainer.textContent = "Error loading video. Please check the link.";
     });
 
@@ -123,5 +164,17 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadCertificateButton.disabled = true; // Disabled initially
     downloadCertificateButton.addEventListener('click', () => {
         alert('Congratulations on completing the course! Your certificate will be downloaded.');
+    });
+
+    // Initial video setup
+    const firstVideo = videoData[0];
+    if (firstVideo) {
+        videoFrame.src = firstVideo.src;
+        summaryContainer.textContent = aiSummaries[firstVideo.title] || "Summary not available.";
+    }
+
+    // Ensure checkbox completion logic remains consistent
+    document.querySelectorAll('.mark-completed').forEach((checkbox) => {
+        checkbox.addEventListener('change', updateProgress);
     });
 });
